@@ -108,4 +108,3 @@ def create():
             print('До скорых встреч!')
             quit()
 
-create()
