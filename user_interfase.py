@@ -33,8 +33,20 @@ def create():
                 return 1.3
 
             elif choice2 == 4:
-
-                return 1.4
+                print("\nДЕЛЕНИЕ ЧИСЛА")
+                print("1. '/' - обычное деление")
+                print("2. '//' - целочисленное деление")
+                print("3. '%' - остаток от деления")
+                print("0. Вернуться в главное меню")
+                choice3 = int(input("Выберете операцию: "))
+                if choice3 == 1:
+                    return 1.41
+                elif choice3 == 2:
+                    return 1.42
+                elif choice3 == 3:
+                    return 1.43
+                elif choice3 == 0:
+                    create()
 
             elif choice2 == 5:
 
@@ -48,6 +60,7 @@ def create():
                 create()
             else:
                 print("Ой! Ошибка ввода")
+                create()
 
         if choice1 == 2:
             print("\nКОМПЛЕКСНЫЕ ЧИСЛА")
@@ -89,7 +102,10 @@ def create():
 
             else:
                 print("Ой! Ошибка ввода")
+                create()
 
         if choice1 == 0:
             print('До скорых встреч!')
             quit()
+
+create()
