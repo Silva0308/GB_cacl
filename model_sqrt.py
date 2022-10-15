@@ -12,6 +12,5 @@ def init(a,b):
     
     
 def sqrt(x):    
-    return math.sqrt(x)
+    return round(math.sqrt(x),2)
 
-print(sqrt(25))

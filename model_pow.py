@@ -11,4 +11,3 @@ def init(a,b):
 def pow(x,y):    
     return x**y
 
-print(pow(5,3))
