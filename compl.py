@@ -1,29 +1,21 @@
-x = 0
-y = 0
 
-
-def get_parts():
-    global x
-    global y
+def make_complex():
     while True:
         a = (input("Введите действительную часть числа: "))
         if not (a.isdigit()):
             print('Ошибка. Повторите ввод')
             continue
-        x = int(a)
+        a = int(a)
         break
     while True:
         b = (input("Введите мнимую часть числа: "))
         if not (b.isdigit()):
             print('Ошибка. Повторите ввод')
             continue
-        y = int(b)
+        b = int(b)
         break
-    return x, y
+    return complex(a, b)
 
 
-def make_complex(a, b):
-    num = complex(a, b)
-    return num
 
 
