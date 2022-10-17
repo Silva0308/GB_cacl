@@ -80,23 +80,38 @@ def create():
                     r1 = excep.take_value()
                     r2 = excep.take_value()
                     model_div.init(r1, r2)
-                    result = model_div.do_it()
-                    print(result)
-                    return result
+                    try:
+                        result = model_div.do_it()
+                        print(result)
+                        return result
+                    except ZeroDivisionError:
+                        print('Делить на ноль нельзя')
+                        return create()
+
+
+
                 elif choice3 == 2:
                     r1 = excep.take_value()
                     r2 = excep.take_value()
                     model_div.init(r1, r2)
-                    result = model_div.do_it_w()
-                    print(result)
-                    return result
+                    try:
+                        result = model_div.do_it_w()
+                        print(result)
+                        return result
+                    except ZeroDivisionError:
+                        print('Делить на ноль нельзя')
+                        return create()
                 elif choice3 == 3:
                     r1 = excep.take_value()
                     r2 = excep.take_value()
                     model_div.init(r1, r2)
-                    result = model_div.do_it_r()
-                    print(result)
-                    return result
+                    try:
+                        result = model_div.do_it_r()
+                        print(result)
+                        return result
+                    except ZeroDivisionError:
+                        print('Делить на ноль нельзя')
+                        return create()
                 elif choice3 == 0:
                     create()
 
@@ -169,9 +184,13 @@ def create():
                 c1 = compl.make_complex()
                 c2 = compl.make_complex()
                 model_div.init(c1, c2)
-                result = model_div.do_it()
-                print(result)
-                return result
+                try:
+                    result = model_div.do_it()
+                    print(result)
+                    return result
+                except ZeroDivisionError:
+                    print('Делить на ноль нельзя')
+                    return create()
 
             elif choice2 == 5:
 
