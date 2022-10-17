@@ -8,6 +8,6 @@ def init(a,b):
     y = b
     
     
-def pow(x,y):    
+def do_it(x,y):
     return x**y
 

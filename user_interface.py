@@ -1,6 +1,13 @@
-
+import compl
+import model_div
+import model_sum
+import model_pow
+import model_sub
+import model_mult
+import model_sqrt
 
 print('Добро пожаловать в Калькулятор!')
+
 
 def create():
     while True:
@@ -28,7 +35,6 @@ def create():
             except ValueError:
                 print('Это не целое число. Попробуйте снова...')
                 return create()
-
 
             if choice2 == 1:
 
@@ -92,8 +98,14 @@ def create():
                 print('Это не целое число. Попробуйте снова...')
                 return create()
 
-
             if choice2 == 1:
+                c1 = compl.make_complex()
+                c2 = compl.make_complex()
+                model_sum.init(c1, c2)
+                result = model_sum.do_it()
+                print(result)
+                return result
+
 
                 return 2.1
 
@@ -127,5 +139,6 @@ def create():
         if choice1 == 0:
             print('До скорых встреч!')
             quit()
+
 
 create()

@@ -11,6 +11,6 @@ def init(a,b):
     y = b
     
     
-def sqrt(x):    
+def do_it(x):
     return round(math.sqrt(x),2)
 
