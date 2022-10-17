@@ -6,6 +6,7 @@ import model_sub
 import model_mult
 import model_sqrt
 import excep
+import logg
 
 print('Добро пожаловать в Калькулятор!')
 
@@ -16,10 +17,12 @@ def create():
         print("1. Работа с рациональными числами")
         print("2. Работа с комплексными числами")
         print("0. Выход")
+        logg.start_app()
         try:
             choice1 = int(input("Выберете раздел: "))
         except ValueError:
             print('Это не целое число. Попробуйте снова...')
+            logg.error_enter()
             return create()
 
         if choice1 == 1:
@@ -34,7 +37,8 @@ def create():
             try:
                 choice2 = int(input("Выберете операцию: "))
             except ValueError:
-                print('Это не целое число. Попробуйте снова...')
+                print('Это не число. Попробуйте снова...')
+                logg.error_enter()
                 return create()
 
             if choice2 == 1:
@@ -42,6 +46,7 @@ def create():
                 r2 = excep.take_value()
                 model_sum.init(r1, r2)
                 result = model_sum.do_it()
+                logg.sum_log(r1, r2, result)
                 print(result)
                 return result
 
@@ -52,6 +57,7 @@ def create():
                 r2 = excep.take_value()
                 model_sub.init(r1, r2)
                 result = model_sub.do_it()
+                logg.sub_log(r1, r2, result)
                 print(result)
                 return result
 
@@ -61,6 +67,7 @@ def create():
                 r2 = excep.take_value()
                 model_mult.init(r1, r2)
                 result = model_mult.do_it()
+                logg.mult_log(r1, r2, result)
                 print(result)
                 return result
 
@@ -74,6 +81,7 @@ def create():
                     choice3 = int(input("Выберете операцию: "))
                 except ValueError:
                     print('Это не целое число. Попробуйте снова...')
+                    logg.error_enter()
                     return create()
 
                 if choice3 == 1:
@@ -82,10 +90,12 @@ def create():
                     model_div.init(r1, r2)
                     try:
                         result = model_div.do_it()
+                        logg.div_log(r1, r2, result)
                         print(result)
                         return result
                     except ZeroDivisionError:
                         print('Делить на ноль нельзя')
+                        logg.error_enter()
                         return create()
 
 
@@ -96,10 +106,12 @@ def create():
                     model_div.init(r1, r2)
                     try:
                         result = model_div.do_it_w()
+                        logg.div_log_w(r1, r2, result)
                         print(result)
                         return result
                     except ZeroDivisionError:
                         print('Делить на ноль нельзя')
+                        logg.error_enter()
                         return create()
                 elif choice3 == 3:
                     r1 = excep.take_value()
@@ -107,10 +119,12 @@ def create():
                     model_div.init(r1, r2)
                     try:
                         result = model_div.do_it_r()
+                        logg.div_log_r()
                         print(result)
                         return result
                     except ZeroDivisionError:
                         print('Делить на ноль нельзя')
+                        logg.error_enter()
                         return create()
                 elif choice3 == 0:
                     create()
@@ -121,6 +135,7 @@ def create():
                 r2 = excep.take_value()
                 model_pow.init(r1, r2)
                 result = model_pow.do_it()
+                logg.pow_log()
                 print(result)
                 return result
 
@@ -128,6 +143,7 @@ def create():
 
                 r1 = excep.take_value()
                 result = model_sqrt.do_it(r1)
+                logg.sgrt_log(r1, result)
                 print(result)
                 return result
 
@@ -135,6 +151,7 @@ def create():
                 create()
             else:
                 print("Ой! Ошибка ввода")
+                logg.error_enter()
                 create()
 
         if choice1 == 2:
@@ -150,6 +167,7 @@ def create():
                 choice2 = int(input("Выберете операцию: "))
             except ValueError:
                 print('Это не целое число. Попробуйте снова...')
+                logg.error_enter()
                 return create()
 
             if choice2 == 1:
@@ -157,6 +175,7 @@ def create():
                 c2 = compl.make_complex()
                 model_sum.init(c1, c2)
                 result = model_sum.do_it()
+                logg.sum_log(c1, c2, result)
                 print(result)
                 return result
 
@@ -167,6 +186,7 @@ def create():
                 c2 = compl.make_complex()
                 model_sub.init(c1, c2)
                 result = model_sub.do_it()
+                logg.sub_log(c1, c2, result)
                 print(result)
                 return result
 
@@ -176,6 +196,7 @@ def create():
                 c2 = compl.make_complex()
                 model_mult.init(c1, c2)
                 result = model_mult.do_it()
+                logg.mult_log(c1, c2, result)
                 print(result)
                 return result
 
@@ -186,10 +207,12 @@ def create():
                 model_div.init(c1, c2)
                 try:
                     result = model_div.do_it()
+                    logg.div_log(c1, c2, result)
                     print(result)
                     return result
                 except ZeroDivisionError:
                     print('Делить на ноль нельзя')
+                    logg.error_enter()
                     return create()
 
             elif choice2 == 5:
@@ -198,6 +221,7 @@ def create():
                 c2 = compl.make_complex()
                 model_pow.init(c1, c2)
                 result = model_pow.do_it()
+                logg.pow_log(c1, c2, result)
                 print(result)
                 return result
 
@@ -205,6 +229,7 @@ def create():
 
                 c1 = compl.make_complex()
                 result = model_sqrt.do_it_c(c1)
+                logg.sgrt_log(c1, result)
                 print(result)
                 return result
 
@@ -213,6 +238,7 @@ def create():
 
             else:
                 print("Ой! Ошибка ввода")
+                logg.error_enter()
                 create()
 
         if choice1 == 0:

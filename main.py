@@ -1,4 +1,4 @@
 # юзер нажимает кнопку
-import controller as c
+import user_interface as c
 
-c.button_click()
+c.create()
