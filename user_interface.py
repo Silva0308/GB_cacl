@@ -1,5 +1,6 @@
-print('Добро пожаловать в Калькулятор!')
 
+
+print('Добро пожаловать в Калькулятор!')
 
 def create():
     while True:
@@ -7,7 +8,11 @@ def create():
         print("1. Работа с рациональными числами")
         print("2. Работа с комплексными числами")
         print("0. Выход")
-        choice1 = int(input("Выберете раздел: "))
+        try:
+            choice1 = int(input("Выберете раздел: "))
+        except ValueError:
+            print('Это не целое число. Попробуйте снова...')
+            return create()
 
         if choice1 == 1:
             print("\nРАЦИОНАЛЬНЫЕ ЧИСЛА")
@@ -18,7 +23,12 @@ def create():
             print("5. Возведение в степень")
             print("6. Корень квадратный числа")
             print("0. Вернуться в главное меню")
-            choice2 = int(input("Выберете операцию: "))
+            try:
+                choice2 = int(input("Выберете операцию: "))
+            except ValueError:
+                print('Это не целое число. Попробуйте снова...')
+                return create()
+
 
             if choice2 == 1:
 
@@ -38,7 +48,12 @@ def create():
                 print("2. '//' - целочисленное деление")
                 print("3. '%' - остаток от деления")
                 print("0. Вернуться в главное меню")
-                choice3 = int(input("Выберете операцию: "))
+                try:
+                    choice3 = int(input("Выберете операцию: "))
+                except ValueError:
+                    print('Это не целое число. Попробуйте снова...')
+                    return create()
+
                 if choice3 == 1:
                     return 1.41
                 elif choice3 == 2:
@@ -71,7 +86,12 @@ def create():
             print("5. Возведение в степень")
             print("6. Корень квадратный числа")
             print("0. Вернуться в главное меню")
-            choice2 = int(input("Выберете операцию: "))
+            try:
+                choice2 = int(input("Выберете операцию: "))
+            except ValueError:
+                print('Это не целое число. Попробуйте снова...')
+                return create()
+
 
             if choice2 == 1:
 
@@ -108,3 +128,4 @@ def create():
             print('До скорых встреч!')
             quit()
 
+create()
