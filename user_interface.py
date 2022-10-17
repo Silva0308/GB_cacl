@@ -5,6 +5,7 @@ import model_pow
 import model_sub
 import model_mult
 import model_sqrt
+import excep
 
 print('Добро пожаловать в Калькулятор!')
 
@@ -37,16 +38,31 @@ def create():
                 return create()
 
             if choice2 == 1:
+                r1 = excep.take_value()
+                r2 = excep.take_value()
+                model_sum.init(r1, r2)
+                result = model_sum.do_it()
+                print(result)
+                return result
 
-                return 1.1
 
             elif choice2 == 2:
 
-                return 1.2
+                r1 = excep.take_value()
+                r2 = excep.take_value()
+                model_sub.init(r1, r2)
+                result = model_sub.do_it()
+                print(result)
+                return result
 
             elif choice2 == 3:
 
-                return 1.3
+                r1 = excep.take_value()
+                r2 = excep.take_value()
+                model_mult.init(r1, r2)
+                result = model_mult.do_it()
+                print(result)
+                return result
 
             elif choice2 == 4:
                 print("\nДЕЛЕНИЕ ЧИСЛА")
@@ -61,21 +77,44 @@ def create():
                     return create()
 
                 if choice3 == 1:
-                    return 1.41
+                    r1 = excep.take_value()
+                    r2 = excep.take_value()
+                    model_div.init(r1, r2)
+                    result = model_div.do_it()
+                    print(result)
+                    return result
                 elif choice3 == 2:
-                    return 1.42
+                    r1 = excep.take_value()
+                    r2 = excep.take_value()
+                    model_div.init(r1, r2)
+                    result = model_div.do_it_w()
+                    print(result)
+                    return result
                 elif choice3 == 3:
-                    return 1.43
+                    r1 = excep.take_value()
+                    r2 = excep.take_value()
+                    model_div.init(r1, r2)
+                    result = model_div.do_it_r()
+                    print(result)
+                    return result
                 elif choice3 == 0:
                     create()
 
             elif choice2 == 5:
 
-                return 1.5
+                r1 = excep.take_value()
+                r2 = excep.take_value()
+                model_pow.init(r1, r2)
+                result = model_pow.do_it()
+                print(result)
+                return result
 
             elif choice2 == 6:
 
-                return 1.6
+                r1 = excep.take_value()
+                result = model_sqrt.do_it(r1)
+                print(result)
+                return result
 
             elif choice2 == 0:
                 create()
@@ -107,27 +146,48 @@ def create():
                 return result
 
 
-                return 2.1
-
             elif choice2 == 2:
 
-                return 2.2
+                c1 = compl.make_complex()
+                c2 = compl.make_complex()
+                model_sub.init(c1, c2)
+                result = model_sub.do_it()
+                print(result)
+                return result
 
             elif choice2 == 3:
 
-                return 2.3
+                c1 = compl.make_complex()
+                c2 = compl.make_complex()
+                model_mult.init(c1, c2)
+                result = model_mult.do_it()
+                print(result)
+                return result
 
             elif choice2 == 4:
 
-                return 2.4
+                c1 = compl.make_complex()
+                c2 = compl.make_complex()
+                model_div.init(c1, c2)
+                result = model_div.do_it()
+                print(result)
+                return result
 
             elif choice2 == 5:
 
-                return 2.5
+                c1 = compl.make_complex()
+                c2 = compl.make_complex()
+                model_pow.init(c1, c2)
+                result = model_pow.do_it()
+                print(result)
+                return result
 
             elif choice2 == 6:
 
-                return 2.6
+                c1 = compl.make_complex()
+                result = model_sqrt.do_it_c(c1)
+                print(result)
+                return result
 
             elif choice2 == 0:
                 create()

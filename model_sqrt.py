@@ -1,16 +1,8 @@
+import cmath
 import math
-from math import sqrt
+def do_it(a):
+    return round(math.sqrt(a), 2)
 
-x = 0
-y = 0
 
-def init(a,b):
-    global x
-    global y
-    x = a
-    y = b
-    
-    
-def do_it(x):
-    return round(math.sqrt(x),2)
-
+def do_it_c(a):
+    return cmath.sqrt(a)

@@ -1,16 +1,15 @@
-import user_interface
-import model_div
 
-
-def value_err():
+def take_value():
+    value = input('Введите число: ')
     try:
-        user_interface.get_value()
+        value = float(value)
+        return value
     except ValueError:
-        return print('Это не целое число. Попробуйте снова...')
+        print('Это не число. Попробуйте снова...')
+        return take_value()
 
-
-def zero_err():
-    try:
-        model_div.div()
-    except ZeroDivisionError:
-        print('Делить на ноль нельзя')
+# def zero_err():
+#     try:
+#         model_div.div()
+#     except ZeroDivisionError:
+#         print('Делить на ноль нельзя')
